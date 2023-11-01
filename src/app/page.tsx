@@ -1,95 +1,104 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-
+'use client'
+import DashboardSummary from "@/components/dashboardSummary/DashboardSummary";
+import Navbar from "@/components/navbar/Navbar";
+import { Box, Button, Typography } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+// import './my.css'
+import Styles from "./stylesheet";
 export default function Home() {
+  const classes = Styles();
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <Box style={{ display: "inline" }}>
+        <Navbar />
+      </Box>
+      <Box className={classes.details}>
+        <Box>
+          <Typography style={{ fontSize: "25px", fontWeight: "600" }}>
+            Hey Olivia
+          </Typography>
+          <Typography style={{ color: "#939393" }}>
+            here what happening witth your store today
+          </Typography>
+        </Box>
+        <Box className={classes.buttonyearly}>
+          <Button
+            style={{
+              height: "35px",
+              backgroundColor: "white",
+              color: "#939393",
+              borderRadius: "4px",
+              border: "1px black",
+            }}
+            endIcon={<KeyboardArrowDownIcon />}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+            Yearly
+          </Button>
+        </Box>
+      </Box>
+      <Box style={{ display: "flex" }} marginTop={1}>
+        <DashboardSummary />
+      </Box>
+      <Box 
+      className={classes.mainbox}
+        // style={{
+        //   display: "flex",
+        //   flexDirection: "row",
+        //   marginLeft: "200px",
+        //   width: "81%",
+        //   marginBottom:'20px'
+        // }}
+      >
+        <Box 
+        className={classes.boxa}
+          // style={{
+          //   display: "flex",
+          //   height: "500px",
+          //   width: "76%",
+          //   flexDirection: "column",
+          // }}
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+          <Box
+            style={{
+              backgroundColor: "white",
+              height: "240px",
+              marginBottom: "20px",
+              width: "100%",
+              borderRadius: "5px",
+              boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.2)",
+            }}
+          ></Box>
+          <Box
+            style={{
+              backgroundColor: "white",
+              height: "240px",
+              borderRadius: "5px",
+              width: "100%",
+              boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.2)",
+            }}
+          ></Box>
+        </Box>
+        <Box 
+        className={classes.boxb}
+          // style={{
+            
+            // display:'flex',
+            // height: "500px",
+            // width: "20%",
+            // flexDirection: "column",
+            // marginLeft: "20px",
+            // gap:'30px',
+            // marginBottom:'10px'
+          // }}
         >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <Box style={{  height: "150px",backgroundColor: "white",boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.2)", borderRadius: "5px",}}>
+          </Box>
+          <Box style={{  height: "150px",backgroundColor: "white",boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.2)",  borderRadius: "5px",}}>
+          </Box>
+          <Box style={{  height: "150px",backgroundColor: "white",boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.2)", borderRadius: "5px",}}>
+          </Box>
+        </Box>
+      </Box>
+    </>
+  );
 }
